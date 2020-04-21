@@ -5,16 +5,19 @@
     "license": "UNLICENSED",
     "scripts": {
         "start": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn server\" \"yarn client\"",
+        "dev": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn server-dev\" \"yarn client\"",
         "bootstrap": "lerna bootstrap",
         "client": "yarn workspace client run start",
         "server": "yarn workspace server run start",
+        "server-dev": "yarn workspace server run dev",
         "app": "yarn workspace app run watch",
         "lint": "eslint ./packages/*/src/**/*.{js,jsx,ts,tsx}",
         "fix": "eslint ./packages/*/src/**/*.{js,jsx,ts,tsx} --fix"
     },
-    "workspaces": [
-        "packages/*"
-    ],
+    "workspaces": {
+        "packages": ["packages/*"],
+        "nohoist": ["**/egg","**/egg/**"]
+    },
     "devDependencies": {
         "@types/node": "^13.7.0",
         "@typescript-eslint/eslint-plugin": "^2.19.0",
