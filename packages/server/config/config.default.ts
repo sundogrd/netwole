@@ -15,9 +15,19 @@ export default (appInfo: EggAppInfo) => {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
   };
 
+  const io = {
+    namespace: {
+      '/p2p': {
+        connectionMiddleware: [ 'auth' ],
+        packetMiddleware: [],
+      },
+    },
+  };
+
   // the return config will combines to EggAppConfig
   return {
     ...config,
     ...bizConfig,
+    io,
   };
 };

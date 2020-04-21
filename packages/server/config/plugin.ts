@@ -6,6 +6,10 @@ const plugin: EggPlugin = {
   //   enable: true,
   //   package: 'egg-view-nunjucks',
   // },
+  io: {
+    enable: true,
+    package: 'egg-socket.io',
+  },
 };
 
 export default plugin;
