@@ -1,18 +1,25 @@
 {
-    "compilerOptions": {
-        "target": "es2015",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "sourceMap": true,
-        "outDir": "./dist/",
-        "jsx": "react",
-        "experimentalDecorators": true
-    },
-    "include": ["src"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "paths": {
+      "/web_modules/*.js": [
+        "node_modules/@types/*",
+        "node_modules/*",
+        "../../node_modules/@types/*",
+        "../../node_modules/*",
+        "public/web_modules/*"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "web_modules"]
 }

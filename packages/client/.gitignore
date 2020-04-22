@@ -1,6 +1,2 @@
-# testing
-/coverage
-
-# production
-/build
-
+dist
+web_modules

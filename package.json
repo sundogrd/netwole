@@ -16,7 +16,10 @@
     },
     "workspaces": {
         "packages": ["packages/*"],
-        "nohoist": ["**/egg","**/egg/**"]
+        "nohoist": [
+            "**/egg",
+            "**/egg/**"
+        ]
     },
     "devDependencies": {
         "@types/node": "^13.7.0",

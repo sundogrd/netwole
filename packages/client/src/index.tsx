@@ -1,19 +1,8 @@
-import "antd/dist/antd.css";
-import { Provider } from "mobx-react";
-import React from "react";
-import { render } from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './components/App/index.js'
 
-import "./api";
-import App from "./app";
-import "./index.css";
-import { stores } from "./stores";
+const appMount = document.querySelector('#app')
+if (appMount) ReactDOM.render(<App />, appMount)
 
-const root = document.createElement("div");
-document.body.appendChild(root);
-
-render(
-    <Provider {...stores}>
-        <App />
-    </Provider>,
-    root
-);
+export default App
